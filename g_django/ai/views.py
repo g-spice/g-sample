@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from datetime import datetime
 
-# Create your views here.
+def index(request):
+    #return HttpResponse("Hello, world. You're at the polls index.")
+    d = {
+        'hour': datetime.now().hour,
+        'message': 'Sample message',
+    }
+    
+    return render(request, 'ai/index.html')
